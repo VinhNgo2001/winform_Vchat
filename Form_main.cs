@@ -28,5 +28,15 @@ namespace testLogin
             Form_dangnhap formdn = new Form_dangnhap();
             formdn.ShowDialog();
         }
+
+        private void siticoneCirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
