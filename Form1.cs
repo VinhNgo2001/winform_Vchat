@@ -60,7 +60,8 @@ namespace testLogin
         private void linkLabel_taotaikhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form_dangky form_Dangky = new Form_dangky();
-            form_Dangky.ShowDialog();
+            form_Dangky.Show();
+            this.Close();
         }
     }
 }

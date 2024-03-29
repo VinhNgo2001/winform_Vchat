@@ -20,7 +20,68 @@ namespace testLogin
 
         private void button_dangky_Click(object sender, EventArgs e)
         {
+            string username, password, email, phonenumer, fullname, confpassword;
+            username =textBox_taikhoan.Text;
+            password = textBox_matkhau.Text;
+            confpassword = textBox_xacnhanmk.Text;
+            email = textBox_email.Text;
+            phonenumer = textBox_sdt.Text;
+            fullname = textBox_hovaten.Text;
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin đăng ký.");
+                return;
+            }
+            if (password != confpassword)
+            {
+                MessageBox.Show("Mật khẩu và xác nhận mật khẩu không khớp. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                // Mở kết nối đến cơ sở dữ liệu
+                using (SqlConnection connection = Connection.OpenConnection())
+                {
+                    // Tạo câu lệnh SQL để thêm người dùng mới vào cơ sở dữ liệu
+                    string query = "INSERT INTO list_users (username, password, email,phonenumber,fullname) VALUES (@Username, @Password, @Email,@phonenumber,@fullname)";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@phonenumber", phonenumer);
+                    command.Parameters.AddWithValue("@fullname", fullname);
 
+                    // Thực thi câu lệnh SQL
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Đăng ký thành công!");
+                        // Sau khi đăng ký thành công, bạn có thể chuyển hướng đến Form khác hoặc thực hiện các hành động khác ở đây
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng ký thất bại. Vui lòng thử lại sau.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+            finally
+            {
+                // Đóng kết nối đến cơ sở dữ liệu
+                Connection.CloseConnection();
+            }
+        }
+
+        private void linkLabel_dangnhap_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            Form_dangnhap loginForm = new Form_dangnhap();
+            loginForm.Show();
         }
     }
 }

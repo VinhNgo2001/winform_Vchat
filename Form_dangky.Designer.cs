@@ -41,16 +41,16 @@
             this.label_taikhoan = new System.Windows.Forms.Label();
             this.button_dangky = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_xacnhanmk = new System.Windows.Forms.TextBox();
             this.label_xacnhanmatkhau = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
             this.label_mail = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_sdt = new System.Windows.Forms.TextBox();
             this.label_sodienthoai = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_hovaten = new System.Windows.Forms.TextBox();
             this.label_hovaten = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,6 +90,7 @@
             this.linkLabel_dangnhap.TabIndex = 6;
             this.linkLabel_dangnhap.TabStop = true;
             this.linkLabel_dangnhap.Text = "Đăng nhập ngay";
+            this.linkLabel_dangnhap.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_dangnhap_LinkClicked);
             // 
             // label_dacotaikhoan
             // 
@@ -199,23 +200,23 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.textBox_xacnhanmk);
             this.panel4.Controls.Add(this.label_xacnhanmatkhau);
             this.panel4.Location = new System.Drawing.Point(79, 292);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(270, 73);
             this.panel4.TabIndex = 3;
             // 
-            // textBox1
+            // textBox_xacnhanmk
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(15, 30);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBox_xacnhanmk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
+            this.textBox_xacnhanmk.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_xacnhanmk.ForeColor = System.Drawing.Color.White;
+            this.textBox_xacnhanmk.Location = new System.Drawing.Point(15, 30);
+            this.textBox_xacnhanmk.Multiline = true;
+            this.textBox_xacnhanmk.Name = "textBox_xacnhanmk";
+            this.textBox_xacnhanmk.Size = new System.Drawing.Size(215, 22);
+            this.textBox_xacnhanmk.TabIndex = 2;
             // 
             // label_xacnhanmatkhau
             // 
@@ -230,23 +231,23 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.textBox_email);
             this.panel5.Controls.Add(this.label_mail);
             this.panel5.Location = new System.Drawing.Point(410, 76);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 73);
             this.panel5.TabIndex = 7;
             // 
-            // textBox2
+            // textBox_email
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(18, 28);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 22);
-            this.textBox2.TabIndex = 1;
+            this.textBox_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
+            this.textBox_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_email.ForeColor = System.Drawing.Color.White;
+            this.textBox_email.Location = new System.Drawing.Point(18, 28);
+            this.textBox_email.Multiline = true;
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(215, 22);
+            this.textBox_email.TabIndex = 1;
             // 
             // label_mail
             // 
@@ -262,23 +263,23 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.textBox_sdt);
             this.panel6.Controls.Add(this.label_sodienthoai);
             this.panel6.Location = new System.Drawing.Point(410, 186);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(274, 73);
             this.panel6.TabIndex = 8;
             // 
-            // textBox3
+            // textBox_sdt
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(18, 28);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(215, 22);
-            this.textBox3.TabIndex = 1;
+            this.textBox_sdt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
+            this.textBox_sdt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_sdt.ForeColor = System.Drawing.Color.White;
+            this.textBox_sdt.Location = new System.Drawing.Point(18, 28);
+            this.textBox_sdt.Multiline = true;
+            this.textBox_sdt.Name = "textBox_sdt";
+            this.textBox_sdt.Size = new System.Drawing.Size(215, 22);
+            this.textBox_sdt.TabIndex = 1;
             // 
             // label_sodienthoai
             // 
@@ -294,23 +295,23 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.panel7.Controls.Add(this.textBox4);
+            this.panel7.Controls.Add(this.textBox_hovaten);
             this.panel7.Controls.Add(this.label_hovaten);
             this.panel7.Location = new System.Drawing.Point(410, 292);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(274, 73);
             this.panel7.TabIndex = 9;
             // 
-            // textBox4
+            // textBox_hovaten
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(18, 28);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 22);
-            this.textBox4.TabIndex = 1;
+            this.textBox_hovaten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
+            this.textBox_hovaten.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_hovaten.ForeColor = System.Drawing.Color.White;
+            this.textBox_hovaten.Location = new System.Drawing.Point(18, 28);
+            this.textBox_hovaten.Multiline = true;
+            this.textBox_hovaten.Name = "textBox_hovaten";
+            this.textBox_hovaten.Size = new System.Drawing.Size(215, 22);
+            this.textBox_hovaten.TabIndex = 1;
             // 
             // label_hovaten
             // 
@@ -364,16 +365,16 @@
         private System.Windows.Forms.Label label_taikhoan;
         private System.Windows.Forms.Button button_dangky;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_sdt;
         private System.Windows.Forms.Label label_sodienthoai;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_email;
         private System.Windows.Forms.Label label_mail;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_xacnhanmk;
         private System.Windows.Forms.Label label_xacnhanmatkhau;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_hovaten;
         private System.Windows.Forms.Label label_hovaten;
     }
 }

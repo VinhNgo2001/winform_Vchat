@@ -16,7 +16,7 @@ namespace testLogin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_dangnhap());
+            Application.Run(new Form_main());
         }
     }
 }
