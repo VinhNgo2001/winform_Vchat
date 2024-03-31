@@ -22,17 +22,9 @@ namespace testLogin
             InitializeComponent();
             
 
-            vScrollBar1.Value = vScrollBar1.Maximum - vScrollBar1.LargeChange + 1;
-            panel_container.Top = -vScrollBar1.Value;
+           
         }
-        private void UpdateScrollBar()
-        {
-            // Tính toán giá trị của thanh cuộn
-            vScrollBar1.Minimum = 0;
-            vScrollBar1.Maximum = totalMessages * 20 - panel_container.Height;
-            vScrollBar1.LargeChange = panel_container.Height;
-            vScrollBar1.SmallChange = 20;
-        }
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -79,19 +71,26 @@ namespace testLogin
         private void SaveMessageToDatabase(SqlConnection connection, string message)
         {
             string imagePath="";
+            string videoPath = "";
 
             if (message.StartsWith("[Image]"))
             {
                 imagePath = message.Replace("[Image] ", "");
                 message = "";
             }
+            if (message.StartsWith("[Video]")){
+                videoPath = message.Replace("[Video] ", "");
+                message = "";
+            }
+            
             DateTime now = DateTime.Now;
             string formattedDateTime = now.ToString("yyyy-MM-dd HH:mm:ss");
-            string query = "INSERT INTO list_mess (messText, messDateTime,image) VALUES (@MessageText, @SentDateTime,@image)";
+            string query = "INSERT INTO list_mess (messText, messDateTime,image,video) VALUES (@MessageText, @SentDateTime,@image,@video)";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@MessageText", message);
             command.Parameters.AddWithValue("@SentDateTime", now);
             command.Parameters.AddWithValue("@image", imagePath);
+            command.Parameters.AddWithValue("@video", videoPath);
 
 
             command.ExecuteNonQuery();
@@ -111,7 +110,7 @@ namespace testLogin
         void AddMesscoming(string message)
         {
             var bubble = new Messcoming();
-            panel_container.Controls.Add(bubble);
+            flowLayoutPanel_mess.Controls.Add(bubble);
             bubble.Dock = DockStyle.Bottom;
             bubble.Messgae = message;
             totalMessages++;
@@ -126,7 +125,7 @@ namespace testLogin
     private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
-            panel_container.Top = -vScrollBar1.Value ;
+            
             
 
         }
@@ -140,37 +139,49 @@ namespace testLogin
         {
             OpenFileDialog  openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.gif;*.png)|*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG";
+            openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string imagePath = openFileDialog.FileName;
-                string imageName = Path.GetFileName(imagePath);
 
-                //tao duong dan luu vao muc image D:\user\repos\testLogin\images\
-                string customPath = @"D:\user\repos\testLogin\images\" + imageName;
-                // Kiểm tra và tạo thư mục "Images" nếu không tồn tại
-
-                string customDirectory = Path.GetDirectoryName(customPath);
-                if (!Directory.Exists(customDirectory))
+                foreach (string imagePath in openFileDialog.FileNames)
                 {
-                    Directory.CreateDirectory(customDirectory);
-                }
-
-                // Lưu trữ hình ảnh vào thư mục trên local
-                File.Copy(imagePath, customPath, true);
-
-                // Gửi tin nhắn chứa đường dẫn của hình ảnh
-                string message = $"[Image] {customPath}";
-                DisplayMessage( message);
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-
-                    connection.Open();
-                    // Thêm tin nhắn vào cơ sở dữ liệu
-                    SaveMessageToDatabase(connection, message);
-
+                    // Kiểm tra và gửi từng hình ảnh
                     
-
+                    SendMessageWithImage(imagePath);
                 }
+                
+            }
+        }
+        private void SendMessageWithImage(string imagePath)
+        {
+            
+            string imageName = Path.GetFileName(imagePath);
+
+            //tao duong dan luu vao muc image D:\user\repos\testLogin\images\
+            string customPath = @"D:\user\repos\testLogin\images\" + imageName;
+            // Kiểm tra và tạo thư mục "Images" nếu không tồn tại
+
+            string customDirectory = Path.GetDirectoryName(customPath);
+            if (!Directory.Exists(customDirectory))
+            {
+                Directory.CreateDirectory(customDirectory);
+            }
+
+            // Lưu trữ hình ảnh vào thư mục trên local
+            File.Copy(imagePath, customPath, true);
+
+            // Gửi tin nhắn chứa đường dẫn của hình ảnh
+            string message = $"[Image] {customPath}";
+            DisplayMessage(message);
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                connection.Open();
+                // Thêm tin nhắn vào cơ sở dữ liệu
+                SaveMessageToDatabase(connection, message);
+
+
+
             }
         }
         private void DisplayMessage(string message)
@@ -185,14 +196,15 @@ namespace testLogin
                     // Tạo một PictureBox mới để hiển thị hình ảnh
                     PictureBox pictureBox = new PictureBox();
                     pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox.Width = 200;
-                    pictureBox.Height = 200;
+                    pictureBox.Size = new Size(200, 200);
                     pictureBox.ImageLocation = imagePath;
 
                     // Thêm PictureBox vào panel chat
                     
-                    panel_container.Controls.Add(pictureBox);
+                    flowLayoutPanel_mess.Controls.Add(pictureBox);
                     pictureBox.Dock = DockStyle.Bottom;
+                    //pictureBox.Location = new Point(0,    flowLayoutPanel_mess.Height - pictureBox.Height);
+
                 }
                 else
                 {
@@ -206,5 +218,50 @@ namespace testLogin
             }
         }
 
+        private void button_video_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Video files (*.mp4;*.avi)|*.mp4;*.avi|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string videoPath = openFileDialog.FileName;
+
+                // Gửi video
+                 
+               // AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+
+                // Lưu trữ video
+                SaveVideo(videoPath);
+            }
+        }
+        private void SaveVideo(string videoPath)
+        {
+            string imageName = Path.GetFileName(videoPath);
+            string customPath = @"D:\user\repos\testLogin\videos\" + imageName;
+            File.Copy(videoPath, customPath, true);
+            //
+            string message = $"[Video] {customPath}";
+            DisplayVideo(customPath);
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                connection.Open();
+                // Thêm tin nhắn vào cơ sở dữ liệu
+                SaveMessageToDatabase(connection, message);
+
+
+
+            }
+        }
+        private void DisplayVideo (string customPath)
+        {
+            AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            axWindowsMediaPlayer.Dock = DockStyle.Bottom;
+            axWindowsMediaPlayer.Size = new Size(300, 200);
+            flowLayoutPanel_mess.Controls.Add(axWindowsMediaPlayer);
+            axWindowsMediaPlayer.URL = customPath;
+        }
+            
     }
 }
