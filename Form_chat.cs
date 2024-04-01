@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
-
+using AnimatedGif;
 namespace testLogin
 {
     public partial class Form_chat : Form
@@ -72,7 +72,7 @@ namespace testLogin
         {
             string imagePath="";
             string videoPath = "";
-
+            string iconPath = "";
             if (message.StartsWith("[Image]"))
             {
                 imagePath = message.Replace("[Image] ", "");
@@ -82,15 +82,20 @@ namespace testLogin
                 videoPath = message.Replace("[Video] ", "");
                 message = "";
             }
-            
+            if (message.StartsWith("[Icon]"))
+            {
+                iconPath = message.Replace("[Icon] ", "");
+                message = "";
+            }
             DateTime now = DateTime.Now;
             string formattedDateTime = now.ToString("yyyy-MM-dd HH:mm:ss");
-            string query = "INSERT INTO list_mess (messText, messDateTime,image,video) VALUES (@MessageText, @SentDateTime,@image,@video)";
+            string query = "INSERT INTO list_mess (messText, messDateTime,image,video,icon) VALUES (@MessageText, @SentDateTime,@image,@video,@icon)";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@MessageText", message);
             command.Parameters.AddWithValue("@SentDateTime", now);
             command.Parameters.AddWithValue("@image", imagePath);
             command.Parameters.AddWithValue("@video", videoPath);
+            command.Parameters.AddWithValue("@icon", iconPath);
 
 
             command.ExecuteNonQuery();
@@ -272,6 +277,8 @@ namespace testLogin
             // Lấy đường dẫn của icon được chọn
             string selectedIcon = form_BangIcon.SelectedIconSrc;
             Console.WriteLine("Đường dẫn của icon:", selectedIcon);
+            //doi thanh gif
+           
 
             // Hiển thị icon được chọn trên panel chat
             // Tạo một PictureBox mới để hiển thị hình ảnh
@@ -279,6 +286,7 @@ namespace testLogin
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.Size = new Size(60, 60);
             pictureBox.ImageLocation = selectedIcon;
+            
             //
             Panel panel = new Panel();
             panel.Dock = DockStyle.Top; // Đặt DockStyle của Panel thành Top
@@ -288,9 +296,19 @@ namespace testLogin
             // Thêm pictureBox vào panel chat của form chính
             flowLayoutPanel_mess.Controls.Add(panel);
            //gui vao list mess
+           string mess = $"[Icon] {selectedIcon}";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
 
-            
+                connection.Open();
+                // Thêm tin nhắn vào cơ sở dữ liệu
+                SaveMessageToDatabase(connection, mess);
 
+
+
+            }
         }
+
+    
     }
 }

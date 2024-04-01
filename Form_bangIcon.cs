@@ -68,6 +68,7 @@ namespace testLogin
         {
             InitializeComponent();
             Icon[] icons = Icon.LoadIconsFromDatabase();
+            
             DisplayIconsInFlowLayoutPanel(icons);
 
         }
@@ -75,7 +76,7 @@ namespace testLogin
         {
             // Clear existing controls in FlowLayoutPanel
             flowLayoutPanel_icons.Controls.Clear();
-
+            
             // Add PictureBox for each icon to FlowLayoutPanel
             foreach (var icon in icons)
             {
