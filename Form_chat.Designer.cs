@@ -35,6 +35,9 @@
             this.flowLayoutPanel_mess = new System.Windows.Forms.FlowLayoutPanel();
             this.button_video = new System.Windows.Forms.Button();
             this.button_icons = new System.Windows.Forms.Button();
+            this.button_checkfile = new System.Windows.Forms.Button();
+            this.button_checkvideo = new System.Windows.Forms.Button();
+            this.button_searchtext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_gui
@@ -44,7 +47,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_gui.Location = new System.Drawing.Point(615, 509);
             this.button_gui.Name = "button_gui";
-            this.button_gui.Size = new System.Drawing.Size(94, 39);
+            this.button_gui.Size = new System.Drawing.Size(170, 39);
             this.button_gui.TabIndex = 0;
             this.button_gui.Text = "Gui";
             this.button_gui.UseVisualStyleBackColor = true;
@@ -81,7 +84,7 @@
             this.flowLayoutPanel_mess.AutoScroll = true;
             this.flowLayoutPanel_mess.Location = new System.Drawing.Point(45, 12);
             this.flowLayoutPanel_mess.Name = "flowLayoutPanel_mess";
-            this.flowLayoutPanel_mess.Size = new System.Drawing.Size(631, 479);
+            this.flowLayoutPanel_mess.Size = new System.Drawing.Size(594, 479);
             this.flowLayoutPanel_mess.TabIndex = 5;
             // 
             // button_video
@@ -104,11 +107,44 @@
             this.button_icons.UseVisualStyleBackColor = true;
             this.button_icons.Click += new System.EventHandler(this.button_icons_Click);
             // 
+            // button_checkfile
+            // 
+            this.button_checkfile.Location = new System.Drawing.Point(645, 23);
+            this.button_checkfile.Name = "button_checkfile";
+            this.button_checkfile.Size = new System.Drawing.Size(117, 41);
+            this.button_checkfile.TabIndex = 8;
+            this.button_checkfile.Text = "check image";
+            this.button_checkfile.UseVisualStyleBackColor = true;
+            this.button_checkfile.Click += new System.EventHandler(this.button_checkfile_Click);
+            // 
+            // button_checkvideo
+            // 
+            this.button_checkvideo.Location = new System.Drawing.Point(645, 81);
+            this.button_checkvideo.Name = "button_checkvideo";
+            this.button_checkvideo.Size = new System.Drawing.Size(117, 41);
+            this.button_checkvideo.TabIndex = 9;
+            this.button_checkvideo.Text = "check video";
+            this.button_checkvideo.UseVisualStyleBackColor = true;
+            this.button_checkvideo.Click += new System.EventHandler(this.button_checkvideo_Click);
+            // 
+            // button_searchtext
+            // 
+            this.button_searchtext.Location = new System.Drawing.Point(645, 137);
+            this.button_searchtext.Name = "button_searchtext";
+            this.button_searchtext.Size = new System.Drawing.Size(117, 30);
+            this.button_searchtext.TabIndex = 10;
+            this.button_searchtext.Text = "tim kiem";
+            this.button_searchtext.UseVisualStyleBackColor = true;
+            this.button_searchtext.Click += new System.EventHandler(this.button_searchtext_Click);
+            // 
             // Form_chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 572);
+            this.ClientSize = new System.Drawing.Size(797, 572);
+            this.Controls.Add(this.button_searchtext);
+            this.Controls.Add(this.button_checkvideo);
+            this.Controls.Add(this.button_checkfile);
             this.Controls.Add(this.button_icons);
             this.Controls.Add(this.button_video);
             this.Controls.Add(this.flowLayoutPanel_mess);
@@ -134,5 +170,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_mess;
         private System.Windows.Forms.Button button_video;
         private System.Windows.Forms.Button button_icons;
+        private System.Windows.Forms.Button button_checkfile;
+        private System.Windows.Forms.Button button_checkvideo;
+        private System.Windows.Forms.Button button_searchtext;
     }
 }

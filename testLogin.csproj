@@ -72,11 +72,29 @@
     <Compile Include="Form_chat.Designer.cs">
       <DependentUpon>Form_chat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_checkfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_checkfile.Designer.cs">
+      <DependentUpon>Form_checkfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_checkvideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_checkvideo.Designer.cs">
+      <DependentUpon>Form_checkvideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_dangky.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_dangky.Designer.cs">
       <DependentUpon>Form_dangky.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_searchtext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_searchtext.Designer.cs">
+      <DependentUpon>Form_searchtext.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Vchat.cs">
       <SubType>Form</SubType>
@@ -102,8 +120,17 @@
     <EmbeddedResource Include="Form_chat.resx">
       <DependentUpon>Form_chat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_checkfile.resx">
+      <DependentUpon>Form_checkfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_checkvideo.resx">
+      <DependentUpon>Form_checkvideo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_dangky.resx">
       <DependentUpon>Form_dangky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_searchtext.resx">
+      <DependentUpon>Form_searchtext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Vchat.resx">
       <DependentUpon>Form_Vchat.cs</DependentUpon>

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using AnimatedGif;
+using System.Runtime.Remoting.Messaging;
 namespace testLogin
 {
     public partial class Form_chat : Form
@@ -20,11 +21,11 @@ namespace testLogin
         public Form_chat()
         {
             InitializeComponent();
-            
 
-           
+
+
         }
-        
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -43,13 +44,13 @@ namespace testLogin
             }
 
             // Hiển thị tin nhắn trong ListBox
-            
+
 
             // Xóa nội dung của TextBox sau khi gửi tin nhắn
             AddMesscoming(textBox_inputmess.Text);
             if (!string.IsNullOrEmpty(messageContent))
             {
-                using (SqlConnection connection = new  SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
                     connection.Open();
@@ -61,16 +62,16 @@ namespace testLogin
 
                 }
             }
-               
 
-            
-            
+
+
+
 
         }
         // luu tin nhan den sql
         private void SaveMessageToDatabase(SqlConnection connection, string message)
         {
-            string imagePath="";
+            string imagePath = "";
             string videoPath = "";
             string iconPath = "";
             if (message.StartsWith("[Image]"))
@@ -78,7 +79,7 @@ namespace testLogin
                 imagePath = message.Replace("[Image] ", "");
                 message = "";
             }
-            if (message.StartsWith("[Video]")){
+            if (message.StartsWith("[Video]")) {
                 videoPath = message.Replace("[Video] ", "");
                 message = "";
             }
@@ -100,12 +101,31 @@ namespace testLogin
 
             command.ExecuteNonQuery();
 
-            
-        }
 
+        }
+        private void loadOldMess()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT messText FROM list_mess";
+                SqlCommand command = new SqlCommand(query, connection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+
+                        string mess = (string)reader["messText"];
+
+                        AddMesscoming(mess);
+                    }
+                }
+            }
+        }
         private void Form_chat_Load(object sender, EventArgs e)
         {
-
+            loadOldMess();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,7 +138,7 @@ namespace testLogin
             flowLayoutPanel_mess.Controls.Add(bubble);
             bubble.Dock = DockStyle.Bottom;
             bubble.Messgae = message;
-            totalMessages++;
+
 
         }
 
@@ -126,12 +146,12 @@ namespace testLogin
         {
 
         }
-        
-    private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
-            
-            
+
+
 
         }
 
@@ -142,7 +162,7 @@ namespace testLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog  openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.gif;*.png)|*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG";
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -151,15 +171,15 @@ namespace testLogin
                 foreach (string imagePath in openFileDialog.FileNames)
                 {
                     // Kiểm tra và gửi từng hình ảnh
-                    
+
                     SendMessageWithImage(imagePath);
                 }
-                
+
             }
         }
         private void SendMessageWithImage(string imagePath)
         {
-            
+
             string imageName = Path.GetFileName(imagePath);
 
             //tao duong dan luu vao muc image D:\user\repos\testLogin\images\
@@ -205,7 +225,7 @@ namespace testLogin
                     pictureBox.ImageLocation = imagePath;
 
                     // Thêm PictureBox vào panel chat
-                    
+
                     flowLayoutPanel_mess.Controls.Add(pictureBox);
                     pictureBox.Dock = DockStyle.Bottom;
                     //pictureBox.Location = new Point(0,    flowLayoutPanel_mess.Height - pictureBox.Height);
@@ -233,8 +253,8 @@ namespace testLogin
                 string videoPath = openFileDialog.FileName;
 
                 // Gửi video
-                 
-               // AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+
+                // AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
 
                 // Lưu trữ video
                 SaveVideo(videoPath);
@@ -259,7 +279,7 @@ namespace testLogin
 
             }
         }
-        private void DisplayVideo (string customPath)
+        private void DisplayVideo(string customPath)
         {
             AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             axWindowsMediaPlayer.Dock = DockStyle.Bottom;
@@ -273,12 +293,12 @@ namespace testLogin
             Form_bangIcon form_BangIcon = new Form_bangIcon();
             form_BangIcon.ShowDialog();
             //formIcon.ShowDialog();
-           
+
             // Lấy đường dẫn của icon được chọn
             string selectedIcon = form_BangIcon.SelectedIconSrc;
             Console.WriteLine("Đường dẫn của icon:", selectedIcon);
             //doi thanh gif
-           
+
 
             // Hiển thị icon được chọn trên panel chat
             // Tạo một PictureBox mới để hiển thị hình ảnh
@@ -286,17 +306,17 @@ namespace testLogin
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.Size = new Size(60, 60);
             pictureBox.ImageLocation = selectedIcon;
-            
+
             //
             Panel panel = new Panel();
             panel.Dock = DockStyle.Top; // Đặt DockStyle của Panel thành Top
-            
+
             panel.Width = 400;
             panel.Controls.Add(pictureBox);
             // Thêm pictureBox vào panel chat của form chính
             flowLayoutPanel_mess.Controls.Add(panel);
-           //gui vao list mess
-           string mess = $"[Icon] {selectedIcon}";
+            //gui vao list mess
+            string mess = $"[Icon] {selectedIcon}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
@@ -309,6 +329,27 @@ namespace testLogin
             }
         }
 
-    
-    }
+        private void button_checkfile_Click(object sender, EventArgs e)
+        {
+            Form formCheckfile = new Form_checkfile();
+            formCheckfile.ShowDialog();
+        }
+
+        private void button_checkvideo_Click(object sender, EventArgs e)
+        {
+            Form fm = new Form_checkvideo();
+            fm.ShowDialog();
+        }
+
+        private void button_searchtext_Click(object sender, EventArgs e)
+        {
+            Form formSearch = new Form_searchtext();
+
+            formSearch.ShowDialog();
+            
+            
+
+
+
+    } }
 }
