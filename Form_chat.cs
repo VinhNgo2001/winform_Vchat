@@ -262,6 +262,35 @@ namespace testLogin
             flowLayoutPanel_mess.Controls.Add(axWindowsMediaPlayer);
             axWindowsMediaPlayer.URL = customPath;
         }
+
+        private void button_icons_Click(object sender, EventArgs e)
+        {
+            Form_bangIcon form_BangIcon = new Form_bangIcon();
+            form_BangIcon.ShowDialog();
+            //formIcon.ShowDialog();
+           
+            // Lấy đường dẫn của icon được chọn
+            string selectedIcon = form_BangIcon.SelectedIconSrc;
+            Console.WriteLine("Đường dẫn của icon:", selectedIcon);
+
+            // Hiển thị icon được chọn trên panel chat
+            // Tạo một PictureBox mới để hiển thị hình ảnh
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Size = new Size(60, 60);
+            pictureBox.ImageLocation = selectedIcon;
+            //
+            Panel panel = new Panel();
+            panel.Dock = DockStyle.Top; // Đặt DockStyle của Panel thành Top
             
+            panel.Width = 400;
+            panel.Controls.Add(pictureBox);
+            // Thêm pictureBox vào panel chat của form chính
+            flowLayoutPanel_mess.Controls.Add(panel);
+           //gui vao list mess
+
+            
+
+        }
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_bangIcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_bangIcon.Designer.cs">
+      <DependentUpon>Form_bangIcon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_chat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Utiles.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_bangIcon.resx">
+      <DependentUpon>Form_bangIcon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_chat.resx">
       <DependentUpon>Form_chat.cs</DependentUpon>

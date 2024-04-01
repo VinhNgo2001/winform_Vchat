@@ -34,6 +34,7 @@
             this.button_hinh = new System.Windows.Forms.Button();
             this.flowLayoutPanel_mess = new System.Windows.Forms.FlowLayoutPanel();
             this.button_video = new System.Windows.Forms.Button();
+            this.button_icons = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_gui
@@ -51,10 +52,10 @@
             // 
             // textBox_inputmess
             // 
-            this.textBox_inputmess.Location = new System.Drawing.Point(182, 509);
+            this.textBox_inputmess.Location = new System.Drawing.Point(283, 509);
             this.textBox_inputmess.Multiline = true;
             this.textBox_inputmess.Name = "textBox_inputmess";
-            this.textBox_inputmess.Size = new System.Drawing.Size(406, 39);
+            this.textBox_inputmess.Size = new System.Drawing.Size(304, 39);
             this.textBox_inputmess.TabIndex = 1;
             this.textBox_inputmess.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -93,11 +94,22 @@
             this.button_video.UseVisualStyleBackColor = true;
             this.button_video.Click += new System.EventHandler(this.button_video_Click);
             // 
+            // button_icons
+            // 
+            this.button_icons.Location = new System.Drawing.Point(168, 509);
+            this.button_icons.Name = "button_icons";
+            this.button_icons.Size = new System.Drawing.Size(80, 39);
+            this.button_icons.TabIndex = 7;
+            this.button_icons.Text = "Icon";
+            this.button_icons.UseVisualStyleBackColor = true;
+            this.button_icons.Click += new System.EventHandler(this.button_icons_Click);
+            // 
             // Form_chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 572);
+            this.Controls.Add(this.button_icons);
             this.Controls.Add(this.button_video);
             this.Controls.Add(this.flowLayoutPanel_mess);
             this.Controls.Add(this.button_hinh);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button button_hinh;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_mess;
         private System.Windows.Forms.Button button_video;
+        private System.Windows.Forms.Button button_icons;
     }
 }
