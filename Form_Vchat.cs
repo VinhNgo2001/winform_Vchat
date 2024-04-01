@@ -16,5 +16,26 @@ namespace testLogin
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form fmdangnhap =new Form_dangnhap();
+            fmdangnhap.Show();
+            this.Close();
+            
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            
+            
+        }
+
+        private void panel2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Form formchat = new Form_chat();
+            formchat.ShowDialog();
+               
+        }
     }
 }

@@ -34,12 +34,15 @@ namespace testLogin
                 {
                     username = textBox_taikhoan.Text;
                     user_password = textBox_matkhau.Text;
-                    MessageBox.Show("dang nhap thanh cong");
+                    MessageBox.Show("Đăng nhập thành công!!!");
+                    Form formv = new Form_Vchat();
+                    formv.ShowDialog();
+                    this.Hide();
 
                 }
                 else
                 {
-                    MessageBox.Show("sai tai khoan mat khau");
+                    MessageBox.Show("sai tài khoản hoặc mật khẩu!!");
                 }
             } 
             catch 
@@ -60,8 +63,8 @@ namespace testLogin
         private void linkLabel_taotaikhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form_dangky form_Dangky = new Form_dangky();
-            form_Dangky.Show();
-            this.Close();
+            form_Dangky.ShowDialog();
+            
         }
     }
 }

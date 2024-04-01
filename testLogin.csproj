@@ -195,5 +195,44 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xanhla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maudo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-log-out-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-image-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-video-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emotion-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-send-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-video-file-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-video-file-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-magnifying-glass-50.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

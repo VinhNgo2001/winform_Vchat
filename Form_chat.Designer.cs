@@ -28,37 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_gui = new System.Windows.Forms.Button();
             this.textBox_inputmess = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button_hinh = new System.Windows.Forms.Button();
             this.flowLayoutPanel_mess = new System.Windows.Forms.FlowLayoutPanel();
-            this.button_video = new System.Windows.Forms.Button();
-            this.button_icons = new System.Windows.Forms.Button();
-            this.button_checkfile = new System.Windows.Forms.Button();
-            this.button_checkvideo = new System.Windows.Forms.Button();
             this.button_searchtext = new System.Windows.Forms.Button();
+            this.button_checkvideo = new System.Windows.Forms.Button();
+            this.button_checkfile = new System.Windows.Forms.Button();
+            this.button_icons = new System.Windows.Forms.Button();
+            this.button_video = new System.Windows.Forms.Button();
+            this.button_hinh = new System.Windows.Forms.Button();
+            this.button_gui = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button_gui
-            // 
-            this.button_gui.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_gui.Location = new System.Drawing.Point(615, 509);
-            this.button_gui.Name = "button_gui";
-            this.button_gui.Size = new System.Drawing.Size(170, 39);
-            this.button_gui.TabIndex = 0;
-            this.button_gui.Text = "Gui";
-            this.button_gui.UseVisualStyleBackColor = true;
-            this.button_gui.Click += new System.EventHandler(this.button_gui_Click);
             // 
             // textBox_inputmess
             // 
-            this.textBox_inputmess.Location = new System.Drawing.Point(283, 509);
+            this.textBox_inputmess.Location = new System.Drawing.Point(213, 497);
             this.textBox_inputmess.Multiline = true;
             this.textBox_inputmess.Name = "textBox_inputmess";
-            this.textBox_inputmess.Size = new System.Drawing.Size(304, 39);
+            this.textBox_inputmess.Size = new System.Drawing.Size(400, 66);
             this.textBox_inputmess.TabIndex = 1;
             this.textBox_inputmess.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -66,82 +53,98 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // flowLayoutPanel_mess
+            // 
+            this.flowLayoutPanel_mess.AutoScroll = true;
+            this.flowLayoutPanel_mess.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel_mess.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel_mess.Name = "flowLayoutPanel_mess";
+            this.flowLayoutPanel_mess.Size = new System.Drawing.Size(670, 479);
+            this.flowLayoutPanel_mess.TabIndex = 5;
+            this.flowLayoutPanel_mess.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_mess_Paint);
+            // 
+            // button_searchtext
+            // 
+            this.button_searchtext.Image = global::testLogin.Properties.Resources.icons8_magnifying_glass_50;
+            this.button_searchtext.Location = new System.Drawing.Point(688, 154);
+            this.button_searchtext.Name = "button_searchtext";
+            this.button_searchtext.Size = new System.Drawing.Size(70, 64);
+            this.button_searchtext.TabIndex = 10;
+            this.button_searchtext.UseVisualStyleBackColor = true;
+            this.button_searchtext.Click += new System.EventHandler(this.button_searchtext_Click);
+            // 
+            // button_checkvideo
+            // 
+            this.button_checkvideo.Image = global::testLogin.Properties.Resources.icons8_video_file_501;
+            this.button_checkvideo.Location = new System.Drawing.Point(688, 85);
+            this.button_checkvideo.Name = "button_checkvideo";
+            this.button_checkvideo.Size = new System.Drawing.Size(70, 63);
+            this.button_checkvideo.TabIndex = 9;
+            this.button_checkvideo.UseVisualStyleBackColor = true;
+            this.button_checkvideo.Click += new System.EventHandler(this.button_checkvideo_Click);
+            // 
+            // button_checkfile
+            // 
+            this.button_checkfile.Image = global::testLogin.Properties.Resources.download;
+            this.button_checkfile.Location = new System.Drawing.Point(688, 12);
+            this.button_checkfile.Name = "button_checkfile";
+            this.button_checkfile.Size = new System.Drawing.Size(70, 67);
+            this.button_checkfile.TabIndex = 8;
+            this.button_checkfile.UseVisualStyleBackColor = true;
+            this.button_checkfile.Click += new System.EventHandler(this.button_checkfile_Click);
+            // 
+            // button_icons
+            // 
+            this.button_icons.Image = global::testLogin.Properties.Resources.icons8_emotion_48;
+            this.button_icons.Location = new System.Drawing.Point(141, 509);
+            this.button_icons.Name = "button_icons";
+            this.button_icons.Size = new System.Drawing.Size(66, 54);
+            this.button_icons.TabIndex = 7;
+            this.button_icons.UseVisualStyleBackColor = true;
+            this.button_icons.Click += new System.EventHandler(this.button_icons_Click);
+            // 
+            // button_video
+            // 
+            this.button_video.Image = global::testLogin.Properties.Resources.icons8_video_50;
+            this.button_video.Location = new System.Drawing.Point(76, 512);
+            this.button_video.Name = "button_video";
+            this.button_video.Size = new System.Drawing.Size(59, 51);
+            this.button_video.TabIndex = 6;
+            this.button_video.UseVisualStyleBackColor = true;
+            this.button_video.Click += new System.EventHandler(this.button_video_Click);
+            // 
             // button_hinh
             // 
             this.button_hinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_hinh.Location = new System.Drawing.Point(12, 506);
+            this.button_hinh.Image = global::testLogin.Properties.Resources.icons8_image_50;
+            this.button_hinh.Location = new System.Drawing.Point(12, 509);
             this.button_hinh.Name = "button_hinh";
-            this.button_hinh.Size = new System.Drawing.Size(69, 42);
+            this.button_hinh.Size = new System.Drawing.Size(58, 54);
             this.button_hinh.TabIndex = 4;
-            this.button_hinh.Text = "hinh";
             this.button_hinh.UseVisualStyleBackColor = true;
             this.button_hinh.Click += new System.EventHandler(this.button1_Click);
             // 
-            // flowLayoutPanel_mess
+            // button_gui
             // 
-            this.flowLayoutPanel_mess.AutoScroll = true;
-            this.flowLayoutPanel_mess.Location = new System.Drawing.Point(45, 12);
-            this.flowLayoutPanel_mess.Name = "flowLayoutPanel_mess";
-            this.flowLayoutPanel_mess.Size = new System.Drawing.Size(594, 479);
-            this.flowLayoutPanel_mess.TabIndex = 5;
-            // 
-            // button_video
-            // 
-            this.button_video.Location = new System.Drawing.Point(87, 509);
-            this.button_video.Name = "button_video";
-            this.button_video.Size = new System.Drawing.Size(75, 39);
-            this.button_video.TabIndex = 6;
-            this.button_video.Text = "video";
-            this.button_video.UseVisualStyleBackColor = true;
-            this.button_video.Click += new System.EventHandler(this.button_video_Click);
-            // 
-            // button_icons
-            // 
-            this.button_icons.Location = new System.Drawing.Point(168, 509);
-            this.button_icons.Name = "button_icons";
-            this.button_icons.Size = new System.Drawing.Size(80, 39);
-            this.button_icons.TabIndex = 7;
-            this.button_icons.Text = "Icon";
-            this.button_icons.UseVisualStyleBackColor = true;
-            this.button_icons.Click += new System.EventHandler(this.button_icons_Click);
-            // 
-            // button_checkfile
-            // 
-            this.button_checkfile.Location = new System.Drawing.Point(645, 23);
-            this.button_checkfile.Name = "button_checkfile";
-            this.button_checkfile.Size = new System.Drawing.Size(117, 41);
-            this.button_checkfile.TabIndex = 8;
-            this.button_checkfile.Text = "check image";
-            this.button_checkfile.UseVisualStyleBackColor = true;
-            this.button_checkfile.Click += new System.EventHandler(this.button_checkfile_Click);
-            // 
-            // button_checkvideo
-            // 
-            this.button_checkvideo.Location = new System.Drawing.Point(645, 81);
-            this.button_checkvideo.Name = "button_checkvideo";
-            this.button_checkvideo.Size = new System.Drawing.Size(117, 41);
-            this.button_checkvideo.TabIndex = 9;
-            this.button_checkvideo.Text = "check video";
-            this.button_checkvideo.UseVisualStyleBackColor = true;
-            this.button_checkvideo.Click += new System.EventHandler(this.button_checkvideo_Click);
-            // 
-            // button_searchtext
-            // 
-            this.button_searchtext.Location = new System.Drawing.Point(645, 137);
-            this.button_searchtext.Name = "button_searchtext";
-            this.button_searchtext.Size = new System.Drawing.Size(117, 30);
-            this.button_searchtext.TabIndex = 10;
-            this.button_searchtext.Text = "tim kiem";
-            this.button_searchtext.UseVisualStyleBackColor = true;
-            this.button_searchtext.Click += new System.EventHandler(this.button_searchtext_Click);
+            this.button_gui.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_gui.Image = global::testLogin.Properties.Resources.icons8_send_50;
+            this.button_gui.Location = new System.Drawing.Point(619, 497);
+            this.button_gui.Name = "button_gui";
+            this.button_gui.Size = new System.Drawing.Size(74, 66);
+            this.button_gui.TabIndex = 0;
+            this.button_gui.UseVisualStyleBackColor = true;
+            this.button_gui.Click += new System.EventHandler(this.button_gui_Click);
             // 
             // Form_chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 572);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(770, 572);
             this.Controls.Add(this.button_searchtext);
             this.Controls.Add(this.button_checkvideo);
             this.Controls.Add(this.button_checkfile);
@@ -154,7 +157,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Form_chat";
-            this.Text = "Form_chat";
+            this.Text = "Chat";
             this.Load += new System.EventHandler(this.Form_chat_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

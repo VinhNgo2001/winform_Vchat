@@ -117,8 +117,8 @@ namespace testLogin
 
 
                         string mess = (string)reader["messText"];
-
-                        AddMesscoming(mess);
+                        if (mess != "") { AddMesscoming(mess); }
+                        
                     }
                 }
             }
@@ -351,5 +351,11 @@ namespace testLogin
 
 
 
-    } }
+    }
+
+        private void flowLayoutPanel_mess_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

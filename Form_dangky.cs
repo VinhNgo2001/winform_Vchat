@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static testLogin.Form_dangky;
 
 namespace testLogin
 {
@@ -16,17 +17,24 @@ namespace testLogin
         public Form_dangky()
         {
             InitializeComponent();
+            
         }
-
+        public class newUser
+        {
+            public string imagePath{get;set;}
+        }
+        newUser newuser = new newUser();
         private void button_dangky_Click(object sender, EventArgs e)
         {
-            string username, password, email, phonenumer, fullname, confpassword;
+            string username, password, email, phonenumer, fullname, confpassword, khac;
             username =textBox_taikhoan.Text;
             password = textBox_matkhau.Text;
             confpassword = textBox_xacnhanmk.Text;
             email = textBox_email.Text;
             phonenumer = textBox_sdt.Text;
             fullname = textBox_hovaten.Text;
+            
+            khac = newuser.imagePath;
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin đăng ký.");
@@ -43,13 +51,14 @@ namespace testLogin
                 using (SqlConnection connection = Connection.OpenConnection())
                 {
                     // Tạo câu lệnh SQL để thêm người dùng mới vào cơ sở dữ liệu
-                    string query = "INSERT INTO list_users (username, password, email,phonenumber,fullname) VALUES (@Username, @Password, @Email,@phonenumber,@fullname)";
+                    string query = "INSERT INTO list_users (username, password, email,phonenumber,fullname,khac ) VALUES (@Username, @Password, @Email,@phonenumber,@fullname,@khac )";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Username", username);
                     command.Parameters.AddWithValue("@Password", password);
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@phonenumber", phonenumer);
                     command.Parameters.AddWithValue("@fullname", fullname);
+                    command.Parameters.AddWithValue("@khac ", khac);
 
                     // Thực thi câu lệnh SQL
                     int rowsAffected = command.ExecuteNonQuery();
@@ -82,6 +91,19 @@ namespace testLogin
             this.Close();
             Form_dangnhap loginForm = new Form_dangnhap();
             loginForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.gif;*.png)|*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+               string  imagepath = openFileDialog.FileName;
+                newuser.imagePath = imagepath;
+                
+
+            }
         }
     }
 }
