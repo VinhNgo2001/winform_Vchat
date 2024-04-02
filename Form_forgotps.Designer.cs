@@ -30,8 +30,8 @@
         {
             this.button_dangnhap = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label_taikhoan = new System.Windows.Forms.Label();
             this.textBox_taikhoan = new System.Windows.Forms.TextBox();
+            this.label_taikhoan = new System.Windows.Forms.Label();
             this.label_dangnhap = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             this.button_dangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.button_dangnhap.ForeColor = System.Drawing.Color.White;
-            this.button_dangnhap.Location = new System.Drawing.Point(79, 164);
+            this.button_dangnhap.Location = new System.Drawing.Point(79, 171);
             this.button_dangnhap.Name = "button_dangnhap";
             this.button_dangnhap.Size = new System.Drawing.Size(274, 49);
             this.button_dangnhap.TabIndex = 3;
@@ -60,17 +60,6 @@
             this.panel2.Size = new System.Drawing.Size(274, 73);
             this.panel2.TabIndex = 0;
             // 
-            // label_taikhoan
-            // 
-            this.label_taikhoan.AutoSize = true;
-            this.label_taikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_taikhoan.ForeColor = System.Drawing.Color.White;
-            this.label_taikhoan.Location = new System.Drawing.Point(15, 9);
-            this.label_taikhoan.Name = "label_taikhoan";
-            this.label_taikhoan.Size = new System.Drawing.Size(149, 16);
-            this.label_taikhoan.TabIndex = 0;
-            this.label_taikhoan.Text = "Email đăng ký tài khoản";
-            // 
             // textBox_taikhoan
             // 
             this.textBox_taikhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
@@ -81,6 +70,17 @@
             this.textBox_taikhoan.Name = "textBox_taikhoan";
             this.textBox_taikhoan.Size = new System.Drawing.Size(215, 22);
             this.textBox_taikhoan.TabIndex = 1;
+            // 
+            // label_taikhoan
+            // 
+            this.label_taikhoan.AutoSize = true;
+            this.label_taikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_taikhoan.ForeColor = System.Drawing.Color.White;
+            this.label_taikhoan.Location = new System.Drawing.Point(15, 9);
+            this.label_taikhoan.Name = "label_taikhoan";
+            this.label_taikhoan.Size = new System.Drawing.Size(149, 16);
+            this.label_taikhoan.TabIndex = 0;
+            this.label_taikhoan.Text = "Email đăng ký tài khoản";
             // 
             // label_dangnhap
             // 
@@ -112,6 +112,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "Form_forgotps";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên Mật Khẩu";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

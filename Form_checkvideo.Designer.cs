@@ -48,6 +48,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MinimizeBox = false;
             this.Name = "Form_checkvideo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Video đã gửi";
             this.Load += new System.EventHandler(this.Form_checkvideo_Load);
             this.ResumeLayout(false);

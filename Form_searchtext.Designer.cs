@@ -51,6 +51,7 @@
             this.textBox_timkiem.Name = "textBox_timkiem";
             this.textBox_timkiem.Size = new System.Drawing.Size(266, 59);
             this.textBox_timkiem.TabIndex = 1;
+            this.textBox_timkiem.TextChanged += new System.EventHandler(this.textBox_timkiem_TextChanged);
             // 
             // button_searchtext
             // 
@@ -84,6 +85,7 @@
             this.Controls.Add(this.label1);
             this.MinimizeBox = false;
             this.Name = "Form_searchtext";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_searchtext";
             this.Load += new System.EventHandler(this.Form_searchtext_Load);
             this.ResumeLayout(false);

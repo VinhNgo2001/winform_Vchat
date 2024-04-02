@@ -286,6 +286,8 @@ namespace testLogin
             axWindowsMediaPlayer.Size = new Size(300, 200);
             flowLayoutPanel_mess.Controls.Add(axWindowsMediaPlayer);
             axWindowsMediaPlayer.URL = customPath;
+            axWindowsMediaPlayer.settings.autoStart = false; // Tắt tự động phát
+            axWindowsMediaPlayer.settings.volume = 0;
         }
 
         private void button_icons_Click(object sender, EventArgs e)

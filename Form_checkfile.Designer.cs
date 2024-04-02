@@ -49,6 +49,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form_checkfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hình ảnh đã gửi";
             this.Load += new System.EventHandler(this.Form_checkfile_Load);
             this.ResumeLayout(false);

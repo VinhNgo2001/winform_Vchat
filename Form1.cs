@@ -69,8 +69,8 @@ namespace testLogin
 
         private void linkLabel_quenmatkhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form frmforgotps = new Form_forgotps();
-            frmforgotps.ShowDialog();
+            //Form frmforgotps = new Form_forgotps();
+            //frmforgotps.ShowDialog();
         }
     }
 }

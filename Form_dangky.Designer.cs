@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox_hovaten = new System.Windows.Forms.TextBox();
             this.label_hovaten = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.textBox_taikhoan = new System.Windows.Forms.TextBox();
             this.label_taikhoan = new System.Windows.Forms.Label();
             this.button_dangky = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -82,6 +82,18 @@
             this.panel1.Size = new System.Drawing.Size(796, 521);
             this.panel1.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(410, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(274, 49);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "thêm ảnh đại diện";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(52)))));
@@ -102,6 +114,7 @@
             this.textBox_hovaten.Name = "textBox_hovaten";
             this.textBox_hovaten.Size = new System.Drawing.Size(215, 22);
             this.textBox_hovaten.TabIndex = 6;
+            this.textBox_hovaten.Text = "Quang Vinh";
             // 
             // label_hovaten
             // 
@@ -134,6 +147,7 @@
             this.textBox_sdt.Name = "textBox_sdt";
             this.textBox_sdt.Size = new System.Drawing.Size(215, 22);
             this.textBox_sdt.TabIndex = 5;
+            this.textBox_sdt.Text = "123456789";
             // 
             // label_sodienthoai
             // 
@@ -166,6 +180,7 @@
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.Size = new System.Drawing.Size(215, 22);
             this.textBox_email.TabIndex = 4;
+            this.textBox_email.Text = "vinh@gm.com";
             // 
             // label_mail
             // 
@@ -198,6 +213,7 @@
             this.textBox_xacnhanmk.Name = "textBox_xacnhanmk";
             this.textBox_xacnhanmk.Size = new System.Drawing.Size(215, 22);
             this.textBox_xacnhanmk.TabIndex = 3;
+            this.textBox_xacnhanmk.Text = "123";
             // 
             // label_xacnhanmatkhau
             // 
@@ -261,6 +277,7 @@
             this.textBox_matkhau.Name = "textBox_matkhau";
             this.textBox_matkhau.Size = new System.Drawing.Size(215, 22);
             this.textBox_matkhau.TabIndex = 2;
+            this.textBox_matkhau.Text = "123";
             // 
             // label_matkhau
             // 
@@ -302,6 +319,7 @@
             this.textBox_taikhoan.Name = "textBox_taikhoan";
             this.textBox_taikhoan.Size = new System.Drawing.Size(215, 22);
             this.textBox_taikhoan.TabIndex = 1;
+            this.textBox_taikhoan.Text = "vinh456";
             // 
             // label_taikhoan
             // 
@@ -326,18 +344,6 @@
             this.button_dangky.UseVisualStyleBackColor = false;
             this.button_dangky.Click += new System.EventHandler(this.button_dangky_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(410, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(274, 49);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "thêm ảnh đại diện";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form_dangky
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,7 +354,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "Form_dangky";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng ký";
+            this.Load += new System.EventHandler(this.Form_dangky_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);

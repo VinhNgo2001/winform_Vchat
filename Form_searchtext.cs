@@ -87,11 +87,11 @@ namespace testLogin
                     Console.WriteLine("check here"+ listMessfound);
                     if (listMessfound == null)
                     {
-                        MessageBox.Show("khong co tin nhan chua tu khoa");
+                        MessageBox.Show("Không có tin nhắn chứa từ khóa ");
                     }
                     else
                     {
-                        MessageBox.Show("tim kiem dc "+ listMessfound.Count+ " tin nhan chua tu khoa");
+                        MessageBox.Show("Tìm kiếm được "+ listMessfound.Count+ " tin nhắn chứa từ khóa");
                         
                         
                         
@@ -102,11 +102,16 @@ namespace testLogin
             }
             else 
             {
-                MessageBox.Show("vui long nhap tu khoa");
+                MessageBox.Show("vui lòng nhập từ khóa ");
                    }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox_timkiem_TextChanged(object sender, EventArgs e)
         {
 
         }

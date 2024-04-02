@@ -105,5 +105,10 @@ namespace testLogin
 
             }
         }
+
+        private void Form_dangky_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

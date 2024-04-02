@@ -37,5 +37,18 @@ namespace testLogin
             formchat.ShowDialog();
                
         }
+
+        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        {
+            Form formchat = new Form_chat();
+            formchat.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form formchat = new Form_chat();
+            formchat.ShowDialog();
+        }
     }
 }
