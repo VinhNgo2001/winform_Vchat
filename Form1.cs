@@ -35,7 +35,7 @@ namespace testLogin
                     username = textBox_taikhoan.Text;
                     user_password = textBox_matkhau.Text;
                     MessageBox.Show("Đăng nhập thành công!!!");
-                    Form formv = new Form_Vchat();
+                    Form formv = new Form_menu();
                     formv.ShowDialog();
                     this.Hide();
 
