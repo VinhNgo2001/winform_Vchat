@@ -45,9 +45,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 582);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MinimizeBox = false;
             this.Name = "Form_checkvideo";
-            this.Text = "Form_checkvideo";
+            this.Text = "Video đã gửi";
             this.Load += new System.EventHandler(this.Form_checkvideo_Load);
             this.ResumeLayout(false);
 

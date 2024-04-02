@@ -162,6 +162,7 @@
             this.linkLabel_quenmatkhau.TabIndex = 4;
             this.linkLabel_quenmatkhau.TabStop = true;
             this.linkLabel_quenmatkhau.Text = "Quên mật khẩu?";
+            this.linkLabel_quenmatkhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_quenmatkhau_LinkClicked);
             // 
             // panel3
             // 

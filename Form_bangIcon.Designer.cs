@@ -33,6 +33,7 @@
             // 
             // flowLayoutPanel_icons
             // 
+            this.flowLayoutPanel_icons.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel_icons.Location = new System.Drawing.Point(12, 23);
             this.flowLayoutPanel_icons.Name = "flowLayoutPanel_icons";
             this.flowLayoutPanel_icons.Size = new System.Drawing.Size(644, 160);
@@ -43,11 +44,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(671, 195);
             this.Controls.Add(this.flowLayoutPanel_icons);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form_bangIcon";
-            this.Text = "Form_bangIcon";
+            this.Text = "Icons";
             this.Load += new System.EventHandler(this.Form_bangIcon_Load);
             this.ResumeLayout(false);
 

@@ -66,5 +66,11 @@ namespace testLogin
             form_Dangky.ShowDialog();
             
         }
+
+        private void linkLabel_quenmatkhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form frmforgotps = new Form_forgotps();
+            frmforgotps.ShowDialog();
+        }
     }
 }

@@ -96,9 +96,10 @@ namespace testLogin
                     pictureBox.Click += (sender, e) =>
                     {
                         // Handle click event
-                        MessageBox.Show($"Icon clicked: {icon.Name}");
+                        //MessageBox.Show($"chon thanh cong");
                        // Console.WriteLine($"loi o day icon src: {icon.Source}");
                         SelectedIconSrc = pictureBox.Tag.ToString();
+                        this.Close();
                     };
                 }
                 else

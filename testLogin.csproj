@@ -90,6 +90,12 @@
     <Compile Include="Form_dangky.Designer.cs">
       <DependentUpon>Form_dangky.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_forgotps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_forgotps.Designer.cs">
+      <DependentUpon>Form_forgotps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_searchtext.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_dangky.resx">
       <DependentUpon>Form_dangky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_forgotps.resx">
+      <DependentUpon>Form_forgotps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_searchtext.resx">
       <DependentUpon>Form_searchtext.cs</DependentUpon>
